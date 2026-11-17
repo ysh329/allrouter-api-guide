@@ -1,19 +1,10 @@
 # All Router 新手使用手册
 
-版本 v2.0 · 2026-11-16
-信息来源：allrouter.cc 线上页面、`/api/status`、`/api/about`、`/api/user/groups`、`/api/ratio_config` 与 `/v1/*` 接口实测
+- 版本 v2.0 · 2026-11-16
+- 信息来源：allrouter.cc 线上页面、`/api/status`、`/api/about`、`/api/user/groups`、`/api/ratio_config` 与 `/v1/*` 接口实测
 
-## 目录
 
-1. 能用哪些模型
-2. 三步跑通
-3. 钱怎么算
-4. 接 AI Coding Agent
-5. 接桌面客户端
-6. 出问题先看这里
-7. 联系我们
-
-All Router 是一个 AI 模型的 API 中转站。你在一个网站上注册一次，拿到一把 API Key，把代码里的 base_url 改成 `https://allrouter.cc/v1`，就能调用 OpenAI、Claude、Gemini、DeepSeek、通义千问、GLM、Kimi、Grok 等几十个系列的模型，花多少扣多少。
+> All Router 是一个 AI 模型的 API 中转站。你在一个网站上注册一次，拿到一把 API Key，把代码里的 base_url 改成 `https://allrouter.cc/v1`，就能调用 OpenAI、Claude、Gemini、DeepSeek、通义千问、GLM、Kimi、Grok 等几十个系列的模型，花多少扣多少。
 
 它卖两样东西：
 
@@ -30,9 +21,14 @@ All Router 是一个 AI 模型的 API 中转站。你在一个网站上注册一
 - 先付后用。余额或套餐额度用完就调不动，没有欠费额度。
 - 模型清单会变。上新和下架都可能出现在站内公告里，代码里别写死「某个模型永远在」。
 
+
+## 目录
+
+[toc]
+
 ## 一、能用哪些模型
 
-截至 2026-11-16，站点公开的价格配置里一共有 563 个可调用的模型 ID：486 个按 token 计费，29 个按次计费（图像、视频、语音），其中 77 个按上下文长度阶梯计价。
+> 截至 2026-11-16，站点公开的价格配置里一共有 563 个可调用的模型 ID：486 个按 token 计费，29 个按次计费（图像、视频、语音），其中 77 个按上下文长度阶梯计价。
 
 按系列归并，大致是这样：
 
