@@ -113,6 +113,15 @@ a:hover{border-color:var(--ink)}
   margin:clamp(20px,3vw,34px) 0 0;
 }
 .hero-title em{font-style:normal;font-weight:400;color:var(--ink-soft)}
+.intro{margin:0 0 clamp(30px,4vw,46px);padding-bottom:clamp(24px,3vw,34px);border-bottom:1px solid var(--line)}
+.intro .intro-label{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--yield);margin:0 0 14px;
+}
+.intro p{font-size:clamp(15.5px,1.15vw,17px);line-height:1.82;color:var(--ink-soft);margin:0 0 16px}
+.intro ul{margin:0 0 18px;padding-left:18px}
+.intro li{font-size:15.5px;line-height:1.8;color:var(--muted);margin:0 0 7px}
+.intro .callout{margin-top:22px}
 .hero-lead{
   max-width:56ch;color:var(--muted);font-size:clamp(15px,1.2vw,17px);
   line-height:1.78;margin:clamp(18px,2.4vw,28px) 0 0;
@@ -387,11 +396,10 @@ footer{
       <span class="brand-sub">用户手册</span>
     </a>
     <nav class="topbar-nav">
-      <a href="#c01">这是什么</a>
-      <a href="#c02">模型</a>
-      <a href="#c03">跑通</a>
-      <a href="#c04">计费</a>
-      <a href="#c07">排障</a>
+      <a href="#c01">模型</a>
+      <a href="#c02">跑通</a>
+      <a href="#c03">计费</a>
+      <a href="#c06">排障</a>
       <a href="https://allrouter.cc/" target="_blank" rel="noopener">官网 ↗</a>
       <a href="https://allrouter.cc/sign-in" target="_blank" rel="noopener">控制台 ↗</a>
       <span class="topbar-ver">v2.0</span>
@@ -406,11 +414,11 @@ footer{
       <h1 class="hero-title">All Router<br><em>新手使用手册</em></h1>
       <p class="hero-lead">
         注册一次，拿到一把 Key，把 base_url 换成 allrouter.cc/v1，就能调用 563 个模型。
-        这篇手册只讲新手最先要用的四件事：这是什么、能调哪些模型、怎么跑通、钱怎么算。
+        开篇先说清楚这是个什么东西，后面依次讲能调哪些模型、怎么跑通、钱怎么算、怎么接进编辑器。
       </p>
       <div class="hero-actions">
-        <a class="btn btn-solid" href="#c03">三步跑通 <span>→</span></a>
-        <a class="btn btn-ghost" href="#c04">费用怎么算 <span>→</span></a>
+        <a class="btn btn-solid" href="#c02">三步跑通 <span>→</span></a>
+        <a class="btn btn-ghost" href="#c03">费用怎么算 <span>→</span></a>
       </div>
       <dl class="hero-meta">
         <div><dt>文档版本</dt><dd>v2.0</dd></div>
@@ -424,47 +432,44 @@ footer{
       <aside class="toc" aria-label="目录">
         <p class="toc-title">目录 · Contents</p>
         <ol>
-          <li><a href="#c01"><span>01</span><span>这是什么</span></a></li>
-          <li><a href="#c02"><span>02</span><span>支持的模型</span></a></li>
-          <li><a href="#c03"><span>03</span><span>三步跑通</span></a></li>
-          <li><a href="#c04"><span>04</span><span>费用怎么算</span></a></li>
-          <li><a href="#c05"><span>05</span><span>接 AI Coding Agent</span></a></li>
-          <li><a href="#c06"><span>06</span><span>桌面客户端</span></a></li>
-          <li><a href="#c07"><span>07</span><span>出问题先看</span></a></li>
-          <li><a href="#c08"><span>08</span><span>联系我们</span></a></li>
+          <li><a href="#c01"><span>01</span><span>支持的模型</span></a></li>
+          <li><a href="#c02"><span>02</span><span>三步跑通</span></a></li>
+          <li><a href="#c03"><span>03</span><span>费用怎么算</span></a></li>
+          <li><a href="#c04"><span>04</span><span>接 AI Coding Agent</span></a></li>
+          <li><a href="#c05"><span>05</span><span>桌面客户端</span></a></li>
+          <li><a href="#c06"><span>06</span><span>出问题先看</span></a></li>
+          <li><a href="#c07"><span>07</span><span>联系我们</span></a></li>
         </ol>
         <p class="toc-foot">来源：allrouter.cc 线上页面、公开配置接口、<code>/v1/*</code> 探测与《用户服务协议》。</p>
       </aside>
 
       <article class="prose">
 
+        <section class="intro" id="intro">
+      <p class="intro-label">开篇 · 这是什么</p>
+            <p>All Router 是一个 AI 模型的 API 中转站。你在一个网站上注册一次，拿到一把 API Key，把代码里的 base_url 改成 <code>https://allrouter.cc/v1</code>，就能调用 OpenAI、Claude、Gemini、DeepSeek、通义千问、GLM、Kimi、Grok 等几十个系列的模型，花多少扣多少。</p>
+            <p>它卖两样东西：</p>
+            <ul>
+              <li>充值余额。充多少用多少，按每次调用扣费，长期有效。</li>
+              <li>套餐。30 天一次性额度，价格和额度都固定，不自动续费。</li>
+            </ul>
+            <p>运营方是 TECHFRONTIER PTE. LTD.（新加坡，UEN 202512973K）。</p>
+            <p>官网首页还挂了七个成品工具（Deck 演示、Counsel 法务、Code 编码、Digest 摘要、Lingua 翻译、Insight 分析、Copy 文案），目前都只能通过 API 调，可视化应用还在陆续上线。新手先把 API 跑通，工具那部分以后再说。</p>
+            <p class="intro-label">先知道三件事</p>
+            <ul>
+              <li>模型不是这家做的。平台负责转发、计量和结算，模型本身的能力和稳定性来自各家供应商。</li>
+              <li>先付后用。余额或套餐额度用完就调不动，没有欠费额度。</li>
+              <li>模型清单会变。上新和下架都可能出现在站内公告里，代码里别写死「某个模型永远在」。</li>
+            </ul>
+            <div class="callout">
+              <p class="callout-label">一句话理解</p>
+              <p>你买的是一个统一入口、一份公开单价和一张能对得上的账单。模型能力来自上游，平台负责路由、计量和结算。</p>
+            </div>
+    </section>
+
         <!-- 01 -->
         <section class="chapter" id="c01">
-          <div class="chapter-eyebrow"><span class="num">01</span><span>Overview</span><span class="bar"></span><span>这是什么</span></div>
-          <h2>这是什么</h2>
-          <p>All Router 是一个 AI 模型的 API 中转站。你在一个网站上注册一次，拿到一把 API Key，把代码里的 base_url 改成 <code>https://allrouter.cc/v1</code>，就能调用 OpenAI、Claude、Gemini、DeepSeek、通义千问、GLM、Kimi、Grok 等几十个系列的模型，花多少扣多少。</p>
-          <p>它卖两样东西：</p>
-          <ul>
-            <li>充值余额。充多少用多少，按每次调用扣费，长期有效。</li>
-            <li>套餐。30 天一次性额度，价格和额度都固定，不自动续费。</li>
-          </ul>
-          <p>运营方是 TECHFRONTIER PTE. LTD.（新加坡，UEN 202512973K）。</p>
-          <p>官网首页还挂了七个成品工具（Deck 演示、Counsel 法务、Code 编码、Digest 摘要、Lingua 翻译、Insight 分析、Copy 文案），目前都只能通过 API 调，可视化应用还在陆续上线。新手先把 API 跑通，工具那部分以后再说。</p>
-          <h3>1.1 先知道三件事</h3>
-          <ul>
-            <li>模型不是这家做的。平台负责转发、计量和结算，模型本身的能力和稳定性来自各家供应商。</li>
-            <li>先付后用。余额或套餐额度用完就调不动，没有欠费额度。</li>
-            <li>模型清单会变。上新和下架都可能出现在站内公告里，代码里别写死「某个模型永远在」。</li>
-          </ul>
-          <div class="callout">
-            <p class="callout-label">一句话理解</p>
-            <p>你买的是一个统一入口、一份公开单价和一张能对得上的账单。模型能力来自上游，平台负责路由、计量和结算。</p>
-          </div>
-        </section>
-
-        <!-- 02 -->
-        <section class="chapter" id="c02">
-          <div class="chapter-eyebrow"><span class="num">02</span><span>Models</span><span class="bar"></span><span>支持的模型</span></div>
+          <div class="chapter-eyebrow"><span class="num">01</span><span>Models</span><span class="bar"></span><span>支持的模型</span></div>
           <h2>能用哪些模型</h2>
           <p>截至 2026-11-16，站点公开的价格配置里一共有 563 个可调用的模型 ID：486 个按 token 计费，29 个按次计费（图像、视频、语音），其中 77 个按上下文长度阶梯计价。</p>
           <p>按系列归并，大致是这样：</p>
@@ -490,12 +495,12 @@ footer{
               </tbody>
             </table>
           </div>
-          <h3>2.1 完整清单在哪看</h3>
+          <h3>1.1 完整清单在哪看</h3>
           <ul>
             <li>登录后进控制台的模型广场，能看到当前分组下可用的全部模型和实时单价。</li>
             <li>或者带上 Key 请求 <code>GET https://allrouter.cc/v1/models</code>，直接拿 JSON。</li>
           </ul>
-          <h3>2.2 模型 ID 必须一字不差</h3>
+          <h3>1.2 模型 ID 必须一字不差</h3>
           <p>大小写、后缀都算数，<code>-thinking</code>、<code>[1m]</code>、<code>-openai-compact</code> 都会让 ID 变成另一个模型。建议从模型广场直接复制，别手敲。</p>
           <div class="callout">
             <p class="callout-label">第一次用怎么选</p>
@@ -503,9 +508,9 @@ footer{
           </div>
         </section>
 
-        <!-- 03 -->
-        <section class="chapter" id="c03">
-          <div class="chapter-eyebrow"><span class="num">03</span><span>Quickstart</span><span class="bar"></span><span>三步跑通</span></div>
+        <!-- 02 -->
+        <section class="chapter" id="c02">
+          <div class="chapter-eyebrow"><span class="num">02</span><span>Quickstart</span><span class="bar"></span><span>三步跑通</span></div>
           <h2>三步跑通</h2>
           <p>注册、建 Key、发请求，三步。不用买服务器，不用装中间件，也不用等人工开通。</p>
           <ol class="steps">
@@ -513,10 +518,10 @@ footer{
             <li><b>建一把 Key。</b>控制台左侧「令牌」→「添加令牌」，复制 <code>sk-</code> 开头的那串密钥。</li>
             <li><b>发一个请求。</b>base_url 填 <code>https://allrouter.cc/v1</code>，api_key 填刚复制的 Key，模型填 <code>gpt-5-mini</code>。</li>
           </ol>
-          <h3>3.1 注册</h3>
+          <h3>2.1 注册</h3>
           <p>注册页要填用户名、密码、邮箱，点「发送验证码」，收邮件填进去，勾选服务条款，提交即可。</p>
           <p>站点开了人机校验（Turnstile），如果一直卡在验证环节，换个网络或者关掉代理再试。也可以用 GitHub 或 LinuxDO 账号直接登录。</p>
-          <h3>3.2 建一把 Key</h3>
+          <h3>2.2 建一把 Key</h3>
           <p>登录后进控制台，左侧「令牌」，点「添加令牌」。几个字段值得认真填：</p>
           <div class="table-wrap">
             <table>
@@ -532,7 +537,7 @@ footer{
             </table>
           </div>
           <p>创建成功后会弹窗显示完整 Key，只显示这一次，马上复制保存。之后列表里只剩掩码，丢了只能重建，重建后旧 Key 立即失效。</p>
-          <h3>3.3 发第一个请求</h3>
+          <h3>2.3 发第一个请求</h3>
           <p>Base URL 是 <code>https://allrouter.cc/v1</code>，鉴权用 <code>Authorization: Bearer sk-你的密钥</code>。curl 最小示例：</p>
           <div class="code">
             <div class="code-head"><span>Bash · 最小可用</span><button class="code-copy" type="button">复制</button></div>
@@ -575,14 +580,14 @@ print(resp.usage)</pre>
           <p class="note">控制台目前没有内置 Playground，验证连通性直接用 SDK 或 curl。</p>
         </section>
 
-        <!-- 04 -->
-        <section class="chapter" id="c04">
-          <div class="chapter-eyebrow"><span class="num">04</span><span>Billing</span><span class="bar"></span><span>费用怎么算</span></div>
+        <!-- 03 -->
+        <section class="chapter" id="c03">
+          <div class="chapter-eyebrow"><span class="num">03</span><span>Billing</span><span class="bar"></span><span>费用怎么算</span></div>
           <h2>费用怎么算</h2>
           <p>价格不靠猜，全部能算出来。记住三个变量：模型倍率、输出倍率、分组倍率。</p>
-          <h3>4.1 计价单位</h3>
+          <h3>3.1 计价单位</h3>
           <p>全站用 credits 计价，1 美元 = 10 credits。控制台的余额、每笔扣费都显示成 credits。</p>
-          <h3>4.2 单价公式</h3>
+          <h3>3.2 单价公式</h3>
           <p>文本模型按 token 计费，每 1M 输入 token 的价格按下面两行算：</p>
           <div class="code">
             <div class="code-head"><span>公式</span><button class="code-copy" type="button">复制</button></div>
@@ -596,7 +601,7 @@ print(resp.usage)</pre>
             <li>输出价 = 9.4 × 8 = 75 credits / 1M</li>
             <li>一次请求输入 2,000 token、输出 500 token，大约扣 0.019 + 0.038 = 0.056 credits</li>
           </ul>
-          <h3>4.3 分组倍率</h3>
+          <h3>3.3 分组倍率</h3>
           <p>同一把 Key 绑定一个分组，分组决定可用模型集合和价格乘数。站点公开的 11 个分组如下：</p>
           <div class="table-wrap">
             <table>
@@ -617,7 +622,7 @@ print(resp.usage)</pre>
             </table>
           </div>
           <p>倍率越低越便宜，但便宜的那几档走的是号池或反代，稳定性和限流强度跟官方 API 不一样。要稳定交付选 <code>default</code>、<code>claude-official-api</code>、<code>gpt-azure-api</code>；要压成本、能接受偶发 429 和重试，选号池类分组。</p>
-          <h3>4.4 常见模型实价</h3>
+          <h3>3.4 常见模型实价</h3>
           <p>按 default 分组（0.75）换算，每 1M token 的 credits 价格：</p>
           <div class="table-wrap">
             <table>
@@ -643,13 +648,13 @@ print(resp.usage)</pre>
             </table>
           </div>
           <p class="note">单位是 credits / 1M tokens。同样这些模型，换到对应的号池分组会便宜一大截，比如 gpt 组只有 default 的 7%，claude-max 只有三分之一。</p>
-          <h3>4.5 三种计价方式</h3>
+          <h3>3.5 三种计价方式</h3>
           <ul>
             <li>按 token：绝大多数文本模型，就是上面那套公式。</li>
             <li>按次：图像、视频、语音类共 29 个模型，每次调用固定价格，比如 dall-e-3 0.04 美元 / 次、imagen-3.0 0.03 美元 / 次、flux-1.1-pro 0.04 美元 / 次、mj_imagine 0.1 美元 / 次、mj_video 0.8 美元 / 次。</li>
             <li>阶梯加缓存：77 个模型按上下文长度分档计价，长上下文单价更高。比如 claude-sonnet-5-5 在 512K 以内按基础价，超过 512K 输入价翻倍、输出价翻倍。</li>
           </ul>
-          <h3>4.6 充值和套餐</h3>
+          <h3>3.6 充值和套餐</h3>
           <p>充值就是往余额里加 credits，什么时候用、用哪个模型都行。套餐是另一种账，30 天有效、一次性购买、不自动续费，额度不能并进余额，也不能跨套餐工具使用。目前有两族：</p>
           <div class="table-wrap">
             <table>
@@ -665,7 +670,7 @@ print(resp.usage)</pre>
             </table>
           </div>
           <p>文本族有个每周上限，单周最多用掉总额度的四分之一，周窗口打满就停，即使总额度还有剩。编码族只能从受支持的命令行编码客户端使用，纯调 API 的话充值或文本族更划算。</p>
-          <h3>4.7 退款与对账</h3>
+          <h3>3.7 退款与对账</h3>
           <ul>
             <li>数字服务交付后原则上不退款，没用完的余额和套餐额度也不退。</li>
             <li>能退的只有四类：重复扣款、付款成功但 3 个工作日未交付、平台原因导致服务终止、法律强制要求。</li>
@@ -679,12 +684,12 @@ print(resp.usage)</pre>
           </div>
         </section>
 
-        <!-- 05 -->
-        <section class="chapter" id="c05">
-          <div class="chapter-eyebrow"><span class="num">05</span><span>AI Coding</span><span class="bar"></span><span>编码助手接入</span></div>
+        <!-- 04 -->
+        <section class="chapter" id="c04">
+          <div class="chapter-eyebrow"><span class="num">04</span><span>AI Coding</span><span class="bar"></span><span>编码助手接入</span></div>
           <h2>接 AI Coding Agent</h2>
           <p>Claude Code、Codex CLI、Cursor 这类工具，本质都是「客户端 + 一个 base_url + 一把 Key」。把地址指过来，就能用平台上的模型跑。</p>
-          <h3>5.1 Claude Code</h3>
+          <h3>4.1 Claude Code</h3>
           <p>Claude Code 走 Anthropic 的 Messages 协议，把两个环境变量指过来就行：</p>
           <div class="code">
             <div class="code-head"><span>Bash · Claude Code</span><button class="code-copy" type="button">复制</button></div>
@@ -693,7 +698,7 @@ export ANTHROPIC_AUTH_TOKEN=sk-你的密钥
 claude</pre>
           </div>
           <p>注意这里不带 <code>/v1</code>，客户端会自己拼 <code>/v1/messages</code>。<code>claude-max</code> 分组会把 opus、sonnet、haiku 这几个别名映射到组内对应模型，用别的分组则按该分组的模型清单走。</p>
-          <h3>5.2 Codex CLI</h3>
+          <h3>4.2 Codex CLI</h3>
           <p>Codex 走 OpenAI 的 Responses 协议：</p>
           <div class="code">
             <div class="code-head"><span>Bash · Codex CLI</span><button class="code-copy" type="button">复制</button></div>
@@ -702,14 +707,14 @@ export OPENAI_API_KEY=sk-你的密钥
 codex</pre>
           </div>
           <p>模型选 <code>gpt</code> 号池分组里的 codex 系，或者 <code>default</code> 分组里的 <code>gpt-5</code> 系列。</p>
-          <h3>5.3 Cursor、Cline、Roo Code、Kilo Code、Windsurf</h3>
+          <h3>4.3 Cursor、Cline、Roo Code、Kilo Code、Windsurf</h3>
           <p>这几个都支持自定义 OpenAI 兼容端点，填两个值即可：</p>
           <ul>
             <li>Base URL：<code>https://allrouter.cc/v1</code></li>
             <li>API Key：你的 <code>sk-</code> 密钥</li>
           </ul>
           <p>如果客户端支持 Anthropic 协议（比如 Cline 的 Claude 模式），Base URL 填 <code>https://allrouter.cc</code>，鉴权方式选 x-api-key。</p>
-          <h3>5.4 分组和套餐怎么挑</h3>
+          <h3>4.4 分组和套餐怎么挑</h3>
           <div class="table-wrap">
             <table>
               <thead><tr><th>场景</th><th>建议</th></tr></thead>
@@ -724,9 +729,9 @@ codex</pre>
           <p class="note">站点提示过，不同模型走的路由不同，会话中途换分组时，正在跑的 Codex 或 Claude Code 会话可能需要重启才能生效。</p>
         </section>
 
-        <!-- 06 -->
-        <section class="chapter" id="c06">
-          <div class="chapter-eyebrow"><span class="num">06</span><span>Clients</span><span class="bar"></span><span>桌面客户端</span></div>
+        <!-- 05 -->
+        <section class="chapter" id="c05">
+          <div class="chapter-eyebrow"><span class="num">05</span><span>Clients</span><span class="bar"></span><span>桌面客户端</span></div>
           <h2>接桌面客户端</h2>
           <p>不想写代码，也可以用现成的聊天客户端接进来。控制台的令牌页有一键导入，点图标会自动填好 base_url 和 Key，目前支持：</p>
           <ul>
@@ -737,9 +742,9 @@ codex</pre>
           <p>手工配置也只有两个值：Base URL 填 <code>https://allrouter.cc/v1</code>，API Key 填 <code>sk-</code> 密钥，协议选 OpenAI 兼容；Claude 系工具则选 Anthropic，Base URL 去掉 <code>/v1</code>。</p>
         </section>
 
-        <!-- 07 -->
-        <section class="chapter" id="c07">
-          <div class="chapter-eyebrow"><span class="num">07</span><span>Support</span><span class="bar"></span><span>出问题先看</span></div>
+        <!-- 06 -->
+        <section class="chapter" id="c06">
+          <div class="chapter-eyebrow"><span class="num">06</span><span>Support</span><span class="bar"></span><span>出问题先看</span></div>
           <h2>出问题先看这里</h2>
           <p>新手最常遇到的六种情况，按现象对照就行。</p>
           <div class="table-wrap">
@@ -755,20 +760,20 @@ codex</pre>
               </tbody>
             </table>
           </div>
-          <h3>7.1 目前还用不了的功能</h3>
+          <h3>6.1 目前还用不了的功能</h3>
           <ul>
             <li>官方文档站没上线，<code>docs.allrouter.cc</code> 会跳回首页，<code>/docs</code> 是 404。</li>
             <li>公开价格页没开放，<code>/api/pricing</code> 返回 <code>pricing is disabled</code>，查价请进控制台模型广场。</li>
             <li>可视化应用和 Playground 都没上线，功能只能通过 API 调。</li>
             <li>号池类分组不承诺稳定性，便宜是价格优势，不是 SLA。</li>
           </ul>
-          <h3>7.2 报障带什么</h3>
+          <h3>6.2 报障带什么</h3>
           <p>账号邮箱或用户 ID、Key 名称（别发完整 Key）、请求时间、模型 ID，以及报错里那串 <code>request id</code>。有这几项，客服基本能一次定位。</p>
         </section>
 
-        <!-- 08 -->
-        <section class="chapter" id="c08">
-          <div class="chapter-eyebrow"><span class="num">08</span><span>Contact</span><span class="bar"></span><span>联系我们</span></div>
+        <!-- 07 -->
+        <section class="chapter" id="c07">
+          <div class="chapter-eyebrow"><span class="num">07</span><span>Contact</span><span class="bar"></span><span>联系我们</span></div>
           <h2>联系我们</h2>
           <p>账号、账单、退款这类需要核对身份的问题走邮箱最快；日常使用上的疑问，群里问通常更快有人回。</p>
           <div class="table-wrap">
